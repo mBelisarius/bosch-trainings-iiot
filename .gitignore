@@ -1,0 +1,16 @@
+# IDE settings
+.idea/
+.vscode/
+
+# Compiled files
+bin/
+.pio/
+*.exe
+*.ilk
+*.pdb
+
+# Others
+*.xlsx
+*.pptx
+*.lnk
+*.url
