@@ -2,6 +2,9 @@
 .idea/
 .vscode/
 
+# Jupyter notebook
+**/.ipynb_checkpoints/
+
 # Compiled files
 bin/
 .pio/

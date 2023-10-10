@@ -28,9 +28,13 @@ float temperatureNTC10K(float res)
     return -19.49123972f * log(res - 204.49123972f) + 208.78577114f;
 }
 
-float calibratedVoltage(float rawVoltage)
+float calibratedVoltage(float raw_voltage)
 {
-    return (-0.32698428f * rawVoltage + 1.22885432f) * rawVoltage - 0.34064279f;
+    const float a = -0.0591924f,
+                b =  0.1815789f,
+                c =  0.0267364f;
+
+    return raw_voltage + ((a * raw_voltage + b) * raw_voltage + c);
 }
 
 /*--- Setup ---*/
@@ -46,7 +50,8 @@ void setup()
 /*--- Loop ---*/
 void loop()
 {
-    voltage = static_cast<float>(analogRead(PIN_SENSOR)) * VREF / static_cast<float>(ADC_MAX);
+    voltage = static_cast<float>(analogRead(PIN_SENSOR)) * VREF
+              / static_cast<float>(ADC_MAX);
     voltage = calibratedVoltage(voltage);
     resistence = R1 * voltage / (VREF - voltage);
     temperature = temperatureNTC10K(resistence);
