@@ -13,8 +13,8 @@
 const uint8_t PIN_SENSOR = 33;
 
 /*--- Constants ---*/
-const uint32_t ADC_MAX = (1 << 12) - 1;
 const float VREF = 3.3f;
+const uint32_t ADC_MAX = (1 << 12) - 1;
 const float R1 = 10000.0f;
 
 /*--- Variables ---*/
