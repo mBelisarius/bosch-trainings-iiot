@@ -1,0 +1,13 @@
+Database tree
+
+database
+├───subsys_00
+│   ├───temperature
+│   │   ├───temp_sensor_00
+│   │   └───temp_sensor_01
+│   └───luminosity
+└───subsys_01
+    ├───temperature
+    │   ├───temp_sensor_00
+    │   └───temp_sensor_01
+    └───luminosity
